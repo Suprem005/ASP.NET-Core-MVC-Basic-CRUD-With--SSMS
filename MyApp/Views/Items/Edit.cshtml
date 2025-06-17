@@ -1,0 +1,20 @@
+﻿@model MyApp.Models.Item
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>Edit an Item</h3>
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label> @* for = "Name" to connet it to the name property of item*@
+        <input type="text" class="form-group" asp-for="Name">
+    </div>
+
+    <div class="form-group" style>
+        <label for="Price">Price</label> @* for = "Name" to connet it to the name property of item*@
+        <input type="number" class="form-group" asp-for="Price">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

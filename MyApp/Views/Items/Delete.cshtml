@@ -1,0 +1,16 @@
+﻿@model MyApp.Models.Item
+
+@{
+    ViewData["Title"] = "Delete"; // title of the page, dictionary in c# which works with key-value pair
+}
+
+<h3>Are you sure you want to delete?</h3>
+<p>@Model.Name</p>
+<p>Rs.@Model.Price</p>
+
+<form asp-action="Delete" method="post">
+    <input type ="hidden" asp-for="Id"/>
+    <input type ="submit" class="btn btn-danger" value="Delete"/>
+
+</form>
+

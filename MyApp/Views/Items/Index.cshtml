@@ -1,7 +1,7 @@
 ﻿@model List<MyApp.Models.Item>
 @{
     //just setting the value of title as Index
-    ViewData["Title"] = "Index"; // title of the page, dictionary in c# which works with keyvalue pair
+    ViewData["Title"] = "Items Lists"; // title of the page, dictionary in c# which works with keyvalue pair
 }
 <h3>Index</h3>
 <table class="table">
@@ -16,14 +16,17 @@
         {
             <tr>
                 <td>@item.Name</td>
-                <td>@item.Price.ToString()</td>
-                @* <td>
-                    @@ tag helper provided by razor syntax, connect pages to servier side code(controller), redirect the link to edit action in our controller  @@
+                <td>Rs. @item.Price.ToString("N2")</td>
+                 <td>
+                     @* tag helper provided by razor syntax, connect pages to servier side code(controller), redirect the link to edit action in our controller   *@
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td> *@
+                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td> 
 
             </tr>
         }
     </tbody>
 </table>
+<a asp-action="Create">
+    <button type="submit" class="btn btn-primary" asp-action="Create">Create</button>
+</a>
